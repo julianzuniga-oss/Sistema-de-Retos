@@ -271,6 +271,101 @@
       background: white;
     }
 
+    .screenshots {
+      padding: 6rem 0;
+      background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);
+    }
+
+    .screenshots-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+
+    .screenshot-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .screenshot-item.reverse {
+      direction: rtl;
+    }
+
+    .screenshot-item.reverse > * {
+      direction: ltr;
+    }
+
+    .screenshot-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      transition: all 0.4s ease;
+      background: var(--light);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screenshot-wrapper:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .screenshot-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .screenshot-wrapper::after {
+      content: '●●●';
+      position: absolute;
+      top: 8px;
+      left: 15px;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .screenshot-info {
+      padding: 2rem;
+    }
+
+    .screenshot-info h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .screenshot-info p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .benefits {
+      padding: 6rem 0;
+      background: white;
+    }
+
     .benefits-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -405,6 +500,21 @@
       .btn {
         width: 100%;
       }
+
+      .screenshot-item,
+      .screenshot-item.reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        direction: ltr;
+      }
+
+      .screenshot-info {
+        padding: 1rem;
+      }
+
+      .screenshot-info h3 {
+        font-size: 1.5rem;
+      }
     }
 
     .pulse {
@@ -501,6 +611,83 @@
           <div class="feature-icon">📈</div>
           <h3>Panel Estadístico</h3>
           <p>Visualización completa de métricas, estadísticas y reportes en tiempo real para toma de decisiones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <div class="container">
+      <h2 class="section-title">La Plataforma en Acción</h2>
+      <p class="section-subtitle">
+        Descubre cómo funciona cada módulo de la plataforma
+      </p>
+
+      <div class="screenshots-grid">
+        <!-- Login -->
+        <div class="screenshot-item">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1A4fduFLx7nLDEaDCadeJs8V1dijyLKyX" alt="Pantalla de Login" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>🔐 Inicio de Sesión Seguro</h3>
+            <p>Autenticación con correo institucional y sistema de contraseñas protegido</p>
+          </div>
+        </div>
+
+        <!-- Vista Asociado -->
+        <div class="screenshot-item reverse">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1epZlYoib3EnK65tEd93diMMNC78jWJhY" alt="Vista de Asociado" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>👤 Panel de Asociado</h3>
+            <p>Visualiza retos disponibles, sube evidencias y consulta tu progreso en tiempo real</p>
+          </div>
+        </div>
+
+        <!-- Gestión de Retos -->
+        <div class="screenshot-item">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1UT5WH41RAVH5KVl5ISUQY0wgFoFhA5yu" alt="Gestión de Retos" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>🎯 Gestión de Retos</h3>
+            <p>Crea, edita y administra retos con fechas límite y puntajes personalizados</p>
+          </div>
+        </div>
+
+        <!-- Validación de Evidencias -->
+        <div class="screenshot-item reverse">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1HolN5I3NUFN6G_YquBBhsOGPHKUt5rAO" alt="Validación de Evidencias" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>✅ Validación de Evidencias</h3>
+            <p>Sistema intuitivo para aprobar o rechazar evidencias con comentarios detallados</p>
+          </div>
+        </div>
+
+        <!-- Ranking -->
+        <div class="screenshot-item">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1v3L75ULJWE0AgKRAuw5tOSNIm5_henKh" alt="Sistema de Ranking" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>📊 Sistema de Ranking</h3>
+            <p>Rankings dinámicos por dirección y capitular con visualización de progreso</p>
+          </div>
+        </div>
+
+        <!-- Panel Administrativo -->
+        <div class="screenshot-item reverse">
+          <div class="screenshot-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/19kwg90vfeGtJPP6P38pqvd68jBPNeGRa" alt="Panel Administrativo" class="screenshot-img">
+          </div>
+          <div class="screenshot-info">
+            <h3>🛡️ Panel Administrativo</h3>
+            <p>Estadísticas completas, reportes en tiempo real y control total del sistema</p>
+          </div>
         </div>
       </div>
     </div>
@@ -683,7 +870,7 @@
       });
     }, observerOptions);
 
-    document.querySelectorAll('.feature-card, .role-card, .benefit-item').forEach(el => {
+    document.querySelectorAll('.feature-card, .role-card, .benefit-item, .screenshot-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'all 0.6s ease-out';
